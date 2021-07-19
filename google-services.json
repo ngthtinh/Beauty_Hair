@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "193948814147",
+    "project_id": "beautyhair19clc3",
+    "storage_bucket": "beautyhair19clc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193948814147:android:6da679e7bf9c94b5d13df6",
+        "android_client_info": {
+          "package_name": "com.example.beautyhair"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193948814147-5jq9cjl5spkcimghkn94n9cgsu3f6nbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANgEGJLizNgENvtJPkv9a0Djf4JgDVx3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193948814147-5jq9cjl5spkcimghkn94n9cgsu3f6nbd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
