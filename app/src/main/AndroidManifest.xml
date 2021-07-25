@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BeautyHair">
-
+        <activity android:name=".GreetingActivity"></activity>
         <activity android:name=".StartUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,14 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SignInActivity">
-
-        </activity>
-
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".SignInActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
