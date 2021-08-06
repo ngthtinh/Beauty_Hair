@@ -6,11 +6,6 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_weight="0" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,12 +13,11 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textSignIn"
+            android:id="@+id/textSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Đăng nhập"
-            android:textAlignment="textEnd"
+            android:text="Đăng ký ngay"
             android:textColor="@color/purple_700"
             android:textSize="30sp"/>
 
@@ -33,14 +27,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="BeautyHair"
-            android:textAlignment="textEnd"
             android:textColor="@color/purple_700"
             android:textSize="50sp"
             android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:layout_weight="0" />
 
         <TextView
@@ -66,8 +59,31 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="0" />
+            android:layout_height="20dp"/>
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:paddingLeft="5dp"
+            android:text="Tên của bạn"
+            android:textColor="@color/purple_900"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:ems="10"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
 
         <TextView
             android:id="@+id/textPassword"
@@ -91,13 +107,13 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/buttonSignIn"
+            android:id="@+id/buttonSignUp"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="30dp"
             android:layout_weight="0"
             android:background="@drawable/rounded_corner_active"
-            android:text="Đăng nhập"
+            android:text="Đăng ký ngay"
             android:textColor="@android:color/white"
             android:textSize="22sp" />
 
@@ -107,9 +123,9 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="bottom|left"
-        android:layout_marginRight="225dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginLeft="175dp"
         android:scaleType="fitEnd"
-        app:srcCompat="@drawable/girl3" />
+        app:srcCompat="@drawable/girl4" />
 
 </LinearLayout>

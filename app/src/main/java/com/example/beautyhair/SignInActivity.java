@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,7 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.beautyhair.data.model.Account;
+import com.example.beautyhair.data.model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,46 +33,43 @@ public class SignInActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
 
         buttonSignIn = findViewById(R.id.buttonSignIn);
-        buttonSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                if (TextUtils.isEmpty(editTextPhone.getText().toString()))
-                    Toast.makeText(SignInActivity.this, "Số điện thoại không được để trống!", Toast.LENGTH_SHORT).show();
-                else if (TextUtils.isEmpty(editTextPassword.getText().toString()))
-                    Toast.makeText(SignInActivity.this, "Mật khẩu không được để trống!", Toast.LENGTH_SHORT).show();
-                else {
-                    ProgressDialog signInDialog = new ProgressDialog(SignInActivity.this);
-                    signInDialog.setMessage("Đang đăng nhập...");
-                    signInDialog.show();
+        buttonSignIn.setOnClickListener(view -> {
+            if (TextUtils.isEmpty(editTextPhone.getText().toString()))
+                Toast.makeText(SignInActivity.this, "Số điện thoại không được để trống!", Toast.LENGTH_SHORT).show();
+            else if (TextUtils.isEmpty(editTextPassword.getText().toString()))
+                Toast.makeText(SignInActivity.this, "Mật khẩu không được để trống!", Toast.LENGTH_SHORT).show();
+            else {
+                ProgressDialog signInDialog = new ProgressDialog(SignInActivity.this);
+                signInDialog.setMessage("Đang đăng nhập...");
+                signInDialog.show();
 
-                    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    final DatabaseReference table_account = database.getReference("Accounts");
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                final DatabaseReference table_user = database.getReference("User");
 
-                    table_account.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot snapshot) {
-                            signInDialog.dismiss();
-                            if (snapshot.child(editTextPhone.getText().toString()).exists()) {
-                                Account account = snapshot.child(editTextPhone.getText().toString()).getValue(Account.class);
-                                if (account.getPassword().equals(editTextPassword.getText().toString())) {
-                                    Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                                    Intent mainActivity = new Intent(SignInActivity.this, MainActivity.class);
-                                    startActivity(mainActivity);
-                                    finish();
-                                } else {
-                                    Toast.makeText(SignInActivity.this, "Thông tin đăng nhập không chính xác!", Toast.LENGTH_SHORT).show();
-                                }
+                table_user.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                        signInDialog.dismiss();
+                        if (snapshot.child(editTextPhone.getText().toString()).exists()) {
+                            User user = snapshot.child(editTextPhone.getText().toString()).getValue(User.class);
+                            if (user.getPassword().equals(editTextPassword.getText().toString())) {
+                                Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                                Intent mainActivity = new Intent(SignInActivity.this, MainActivity.class);
+                                startActivity(mainActivity);
+                                finish();
                             } else {
-                                Toast.makeText(SignInActivity.this, "Tài khoản này hiện chưa được đăng ký!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignInActivity.this, "Thông tin đăng nhập không chính xác!", Toast.LENGTH_SHORT).show();
                             }
+                        } else {
+                            Toast.makeText(SignInActivity.this, "Tài khoản này hiện chưa được đăng ký!", Toast.LENGTH_SHORT).show();
                         }
+                    }
 
-                        @Override
-                        public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
-                        }
-                    });
-                }
+                    }
+                });
             }
         });
     }

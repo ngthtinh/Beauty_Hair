@@ -1,14 +1,14 @@
 package com.example.beautyhair.data.model;
 
-public class Account {
+public class User {
     private String Name;
     private String Password;
 
-    public Account()
+    public User()
     {
     }
 
-    public Account(String name, String password)
+    public User(String name, String password)
     {
         Name = name;
         Password = password;
