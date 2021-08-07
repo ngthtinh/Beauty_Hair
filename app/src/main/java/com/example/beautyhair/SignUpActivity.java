@@ -62,8 +62,8 @@ public class SignUpActivity extends AppCompatActivity {
 
                             Toast.makeText(SignUpActivity.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
 
-                            Intent mainActivity = new Intent(SignUpActivity.this, MainActivity.class);
-                            startActivity(mainActivity);
+                            Intent customerMainActivity = new Intent(SignUpActivity.this, CustomerMainActivity.class);
+                            startActivity(customerMainActivity);
                             finish();
                         }
                     }

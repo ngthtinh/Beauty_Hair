@@ -54,8 +54,8 @@ public class SignInActivity extends AppCompatActivity {
                             User user = snapshot.child(editTextPhone.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(editTextPassword.getText().toString())) {
                                 Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                                Intent mainActivity = new Intent(SignInActivity.this, MainActivity.class);
-                                startActivity(mainActivity);
+                                Intent customerMainActivity = new Intent(SignInActivity.this, CustomerMainActivity.class);
+                                startActivity(customerMainActivity);
                                 finish();
                             } else {
                                 Toast.makeText(SignInActivity.this, "Thông tin đăng nhập không chính xác!", Toast.LENGTH_SHORT).show();

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/customer_navigation"
+    app:startDestination="@id/customerHomeFragment">
+
+    <fragment
+        android:id="@+id/customerHomeFragment"
+        android:name="com.example.beautyhair.CustomerHomeFragment"
+        android:label="Trang chủ"
+        tools:layout="@layout/fragment_customer_home" />
+
+    <fragment
+        android:id="@+id/customerActivityFragment"
+        android:name="com.example.beautyhair.CustomerActivityFragment"
+        android:label="Hoạt động"
+        tools:layout="@layout/fragment_customer_activity" />
+
+    <fragment
+        android:id="@+id/customerAccountFragment"
+        android:name="com.example.beautyhair.CustomerAccountFragment"
+        android:label="Tài khoản"
+        tools:layout="@layout/fragment_customer_account" />
+</navigation>
