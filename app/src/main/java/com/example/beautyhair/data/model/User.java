@@ -8,17 +8,27 @@ public class User {
         SHOPKEEPER
     }
 
+    private String Phone;
     private String Name;
     private String Password;
     private UserType Type;
 
     public User() {}
 
-    public User(String name, String password)
+    public User(String phone, String name, String password)
     {
+        Phone = phone;
         Name = name;
         Password = password;
         Type = UserType.CUSTOMER;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
     }
 
     public String getName() {

@@ -53,10 +53,11 @@ public class CustomerShopsListingActivity extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren())
                 {
                     User shop = dataSnapshot.getValue(User.class);
-                    mShop.add(shop);
+                    if (shop.getType() == User.UserType.SHOPKEEPER)
+                        mShop.add(shop);
                 }
 
-                shopAdapter = new ShopAdapter(getApplicationContext(), mShop);
+                shopAdapter = new ShopAdapter(CustomerShopsListingActivity.this, mShop);
                 recyclerView.setAdapter(shopAdapter);
             }
 
