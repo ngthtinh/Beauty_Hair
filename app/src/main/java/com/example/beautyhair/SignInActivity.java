@@ -53,10 +53,28 @@ public class SignInActivity extends AppCompatActivity {
                         if (snapshot.child(editTextPhone.getText().toString()).exists()) {
                             User user = snapshot.child(editTextPhone.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(editTextPassword.getText().toString())) {
-                                Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                                Intent customerMainActivity = new Intent(SignInActivity.this, CustomerMainActivity.class);
-                                startActivity(customerMainActivity);
-                                finish();
+                                if (user.getType().equals(User.UserType.ADMIN))
+                                {
+                                    Toast.makeText(SignInActivity.this, "Vai trò Admin đang được xây dựng!", Toast.LENGTH_SHORT).show();
+                                }
+
+                                if (user.getType().equals(User.UserType.CUSTOMER))
+                                {
+                                    Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+
+                                    Intent customerMainActivity = new Intent(SignInActivity.this, CustomerMainActivity.class);
+                                    startActivity(customerMainActivity);
+                                    finish();
+                                }
+
+                                if (user.getType().equals(User.UserType.SHOPKEEPER))
+                                {
+                                    Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+
+                                    Intent shoopkeeperMainActivity = new Intent(SignInActivity.this, ShopkeeperMainActivity.class);
+                                    startActivity(shoopkeeperMainActivity);
+                                    finish();
+                                }
                             } else {
                                 Toast.makeText(SignInActivity.this, "Thông tin đăng nhập không chính xác!", Toast.LENGTH_SHORT).show();
                             }

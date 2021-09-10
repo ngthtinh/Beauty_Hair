@@ -9,16 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BeautyHair">
-        <activity android:name=".SignUpActivity"/>
+        <activity
+            android:name=".ShopkeeperMainActivity"
+            android:exported="true" />
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".GreetingActivity" />
-        <activity android:name=".StartUpActivity"> </activity>
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".CustomerMainActivity">
+        <activity android:name=".StartUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".CustomerMainActivity" />
     </application>
 
 </manifest>

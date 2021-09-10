@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shopkeeper_navigation"
+    app:startDestination="@id/shopkeeperHomeFragment">
+
+    <fragment
+        android:id="@+id/shopkeeperHomeFragment"
+        android:name="com.example.beautyhair.ShopkeeperHomeFragment"
+        android:label="Trang chủ"
+        tools:layout="@layout/fragment_shopkeeper_home" />
+
+    <fragment
+        android:id="@+id/shopkeeperActivityFragment"
+        android:name="com.example.beautyhair.ShopkeeperActivityFragment"
+        android:label="Hoạt động"
+        tools:layout="@layout/fragment_shopkeeper_activity" />
+
+    <fragment
+        android:id="@+id/shopkeeperAccountFragment"
+        android:name="com.example.beautyhair.ShopkeeperAccountFragment"
+        android:label="Tài khoản"
+        tools:layout="@layout/fragment_shopkeeper_account" />
+</navigation>
