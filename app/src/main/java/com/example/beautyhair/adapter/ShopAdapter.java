@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.beautyhair.CustomerBookingActivity;
 import com.example.beautyhair.R;
 import com.example.beautyhair.SignInActivity;
+import com.example.beautyhair.data.model.Shop;
 import com.example.beautyhair.data.model.User;
 import com.google.firebase.database.ValueEventListener;
 
@@ -23,12 +24,12 @@ import java.util.List;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
     private Context mContext;
-    private List<User> mShop;
+    private List<Shop> mShops;
 
-    public ShopAdapter(Context mContext, List<User> mShop)
+    public ShopAdapter(Context mContext, List<Shop> mShops)
     {
         this.mContext = mContext;
-        this.mShop = mShop;
+        this.mShops = mShops;
     }
 
     @NonNull
@@ -40,12 +41,13 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        User shop = mShop.get(position);
+        Shop shop = mShops.get(position);
         holder.shopname.setText(shop.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent customerBookingActivity = new Intent(mContext, CustomerBookingActivity.class);
+                customerBookingActivity.putExtra("shop_phone", shop.getPhone());
                 mContext.startActivity(customerBookingActivity);
             }
         });
@@ -53,7 +55,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mShop.size();
+        return mShops.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

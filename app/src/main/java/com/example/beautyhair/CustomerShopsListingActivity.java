@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.beautyhair.adapter.ShopAdapter;
-import com.example.beautyhair.data.model.User;
+import com.example.beautyhair.data.model.Shop;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +26,7 @@ public class CustomerShopsListingActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
 
     private ShopAdapter shopAdapter;
-    private List<User> mShop;
+    private List<Shop> mShops;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,27 +37,26 @@ public class CustomerShopsListingActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mShop = new ArrayList<>();
-        readShop();
+        mShops = new ArrayList<>();
+        readShops();
     }
 
-    private void readShop(){
+    private void readShops(){
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference table_user = database.getReference("User");
+        final DatabaseReference table_shop = database.getReference("Shop");
 
-        table_user.addValueEventListener(new ValueEventListener() {
+        table_shop.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mShop.clear();
+                mShops.clear();
 
                 for (DataSnapshot dataSnapshot: snapshot.getChildren())
                 {
-                    User shop = dataSnapshot.getValue(User.class);
-                    if (shop.getType() == User.UserType.SHOPKEEPER)
-                        mShop.add(shop);
+                    Shop shop = dataSnapshot.getValue(Shop.class);
+                    mShops.add(shop);
                 }
 
-                shopAdapter = new ShopAdapter(CustomerShopsListingActivity.this, mShop);
+                shopAdapter = new ShopAdapter(CustomerShopsListingActivity.this, mShops);
                 recyclerView.setAdapter(shopAdapter);
             }
 
