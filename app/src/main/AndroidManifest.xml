@@ -10,17 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeautyHair">
         <activity android:name=".CustomerShopsListingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".GreetingActivity" />
         <activity android:name=".StartUpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".CustomerMainActivity" />
         <activity android:name=".ShopkeeperMainActivity" />

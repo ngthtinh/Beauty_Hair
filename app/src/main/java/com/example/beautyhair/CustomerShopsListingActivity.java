@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.beautyhair.adapter.ShopAdapter;
@@ -32,7 +35,7 @@ public class CustomerShopsListingActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mShop = new ArrayList<>();
         readShop();
@@ -51,8 +54,6 @@ public class CustomerShopsListingActivity extends AppCompatActivity {
                 {
                     User shop = dataSnapshot.getValue(User.class);
                     mShop.add(shop);
-
-                    Toast.makeText(CustomerShopsListingActivity.this, "Đọc!" + shop.getName(), Toast.LENGTH_SHORT).show();
                 }
 
                 shopAdapter = new ShopAdapter(getApplicationContext(), mShop);

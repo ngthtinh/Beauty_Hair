@@ -57,7 +57,7 @@ public class SignUpActivity extends AppCompatActivity {
                         if (snapshot.child(editTextPhone.getText().toString()).exists()) {
                             Toast.makeText(SignUpActivity.this, "Số điện thoại này đã được đăng ký!", Toast.LENGTH_SHORT).show();
                         } else {
-                            User user = new User(editTextName.getText().toString(), editTextPassword.getText().toString(), User.UserType.CUSTOMER);
+                            User user = new User(editTextName.getText().toString(), editTextPassword.getText().toString());
                             table_user.child(editTextPhone.getText().toString()).setValue(user);
 
                             Toast.makeText(SignUpActivity.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();

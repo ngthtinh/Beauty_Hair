@@ -12,15 +12,13 @@ public class User {
     private String Password;
     private UserType Type;
 
-    public User()
-    {
-    }
+    public User() {}
 
-    public User(String name, String password, UserType type)
+    public User(String name, String password)
     {
         Name = name;
         Password = password;
-        Type = type;
+        Type = UserType.CUSTOMER;
     }
 
     public String getName() {
