@@ -50,6 +50,7 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                         signInDialog.dismiss();
+
                         if (snapshot.child(editTextPhone.getText().toString()).exists()) {
                             User user = snapshot.child(editTextPhone.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(editTextPassword.getText().toString())) {
@@ -63,6 +64,7 @@ public class SignInActivity extends AppCompatActivity {
                                     Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
 
                                     Intent customerMainActivity = new Intent(SignInActivity.this, CustomerMainActivity.class);
+                                    customerMainActivity.putExtra("customer_phone", user.getPhone());
                                     startActivity(customerMainActivity);
                                     finish();
                                 }
@@ -71,8 +73,9 @@ public class SignInActivity extends AppCompatActivity {
                                 {
                                     Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
 
-                                    Intent shoopkeeperMainActivity = new Intent(SignInActivity.this, ShopkeeperMainActivity.class);
-                                    startActivity(shoopkeeperMainActivity);
+                                    Intent shopkeeperMainActivity = new Intent(SignInActivity.this, ShopkeeperMainActivity.class);
+                                    shopkeeperMainActivity.putExtra("shopkeeper_phone", user.getPhone());
+                                    startActivity(shopkeeperMainActivity);
                                     finish();
                                 }
                             } else {

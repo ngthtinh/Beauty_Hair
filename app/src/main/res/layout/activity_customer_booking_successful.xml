@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerBookingSuccessfulActivity">
+
+    <ImageView
+        android:id="@+id/imageSuccessful"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gotogethaircut" />
+
+    <TextView
+        android:id="@+id/textSuccessful"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="ĐẶT LỊCH THÀNH CÔNG!"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/textSuccessDetail" />
+
+    <TextView
+        android:id="@+id/textSuccessDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Bạn đã đặt lịch thành công. Hãy đi đến tiệm cắt tóc trước ít nhất 5 phút để có ngay một bộ tóc mới nhé!"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

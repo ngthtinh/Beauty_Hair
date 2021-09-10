@@ -56,7 +56,7 @@ public class CustomerShopsListingActivity extends AppCompatActivity {
                     mShops.add(shop);
                 }
 
-                shopAdapter = new ShopAdapter(CustomerShopsListingActivity.this, mShops);
+                shopAdapter = new ShopAdapter(CustomerShopsListingActivity.this, mShops, getIntent().getStringExtra("customer_phone"));
                 recyclerView.setAdapter(shopAdapter);
             }
 

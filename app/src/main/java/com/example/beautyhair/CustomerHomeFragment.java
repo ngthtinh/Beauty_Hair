@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,11 +65,14 @@ public class CustomerHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View thisView = inflater.inflate(R.layout.fragment_customer_home, container, false);
 
+        Bundle bundle = getArguments();
+
         buttonBookNow = thisView.findViewById(R.id.buttonBookNow);
         buttonBookNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent customerShopsListingActivity = new Intent(getActivity(), CustomerShopsListingActivity.class);
+                customerShopsListingActivity.putExtra("customer_phone", bundle.getString("customer_phone"));
                 startActivity(customerShopsListingActivity);
             }
         });

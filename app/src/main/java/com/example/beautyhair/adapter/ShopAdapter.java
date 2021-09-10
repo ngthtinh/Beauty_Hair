@@ -25,11 +25,13 @@ import java.util.List;
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
     private Context mContext;
     private List<Shop> mShops;
+    private String customer_phone;
 
-    public ShopAdapter(Context mContext, List<Shop> mShops)
+    public ShopAdapter(Context mContext, List<Shop> mShops, String customer_phone)
     {
         this.mContext = mContext;
         this.mShops = mShops;
+        this.customer_phone = customer_phone;
     }
 
     @NonNull
@@ -47,6 +49,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
             @Override
             public void onClick(View view) {
                 Intent customerBookingActivity = new Intent(mContext, CustomerBookingActivity.class);
+                customerBookingActivity.putExtra("customer_phone", customer_phone);
                 customerBookingActivity.putExtra("shop_phone", shop.getPhone());
                 mContext.startActivity(customerBookingActivity);
             }

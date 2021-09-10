@@ -2,6 +2,7 @@ package com.example.beautyhair;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,14 @@ public class CustomerMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
+
+        Fragment initializedFragment = new CustomerHomeFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("customer_phone", getIntent().getStringExtra("customer_phone"));
+        initializedFragment.setArguments(bundle);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, initializedFragment).commit();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
@@ -34,6 +43,9 @@ public class CustomerMainActivity extends AppCompatActivity {
                         selectedFragment = new CustomerAccountFragment();
                         break;
                 }
+                Bundle bundle = new Bundle();
+                bundle.putString("customer_phone", getIntent().getStringExtra("customer_phone"));
+                selectedFragment.setArguments(bundle);
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, selectedFragment).commit();
 
