@@ -74,7 +74,7 @@ public class SignInActivity extends AppCompatActivity {
                                     Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
 
                                     Intent shopkeeperMainActivity = new Intent(SignInActivity.this, ShopkeeperMainActivity.class);
-                                    shopkeeperMainActivity.putExtra("shopkeeper_phone", user.getPhone());
+                                    shopkeeperMainActivity.putExtra("shop_phone", user.getPhone());
                                     startActivity(shopkeeperMainActivity);
                                     finish();
                                 }

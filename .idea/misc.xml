@@ -8,18 +8,21 @@
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_customer_booking_successful.xml" value="0.17889492753623187" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_customer_main.xml" value="0.18819655521783182" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_customer_service_rating.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_customer_shops_listing.xml" value="0.17572463768115942" />
+        <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_customer_shops_listing.xml" value="0.15" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_greeting.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_shopkeeper_main.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_shopkeeper_order_details.xml" value="0.18009259259259258" />
+        <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_shopkeeper_orders_listing.xml" value="0.18009259259259258" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_sign_in.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_sign_up.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/activity_start_up.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/fragment_customer_account.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/fragment_customer_activity.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/fragment_customer_home.xml" value="0.25" />
+        <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/fragment_customer_home.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/fragment_shopkeeper_account.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/fragment_shopkeeper_activity.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/fragment_shopkeeper_home.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/fragment_shopkeeper_home.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/order_item.xml" value="0.18009259259259258" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/layout/shop_item.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/menu/customer_navigation_menu.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/ngthtinh/Desktop/Beauty_Hair/app/src/main/res/menu/shopkeeper_navigation_menu.xml" value="0.20260416666666667" />

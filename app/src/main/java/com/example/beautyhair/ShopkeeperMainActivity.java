@@ -14,6 +14,14 @@ public class ShopkeeperMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopkeeper_main);
 
+        Fragment initializedFragment = new ShopkeeperHomeFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("shop_phone", getIntent().getStringExtra("shop_phone"));
+        initializedFragment.setArguments(bundle);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, initializedFragment).commit();
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
     }
@@ -34,6 +42,9 @@ public class ShopkeeperMainActivity extends AppCompatActivity {
                         selectedFragment = new ShopkeeperAccountFragment();
                         break;
                 }
+                Bundle bundle = new Bundle();
+                bundle.putString("shop_phone", getIntent().getStringExtra("shop_phone"));
+                selectedFragment.setArguments(bundle);
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, selectedFragment).commit();
 

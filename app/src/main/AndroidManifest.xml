@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeautyHair">
         <activity
+            android:name=".ShopkeeperOrderDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ShopkeeperOrdersListingActivity"
+            android:exported="true" />
+        <activity
             android:name=".CustomerServiceRatingActivity"
             android:exported="true" />
         <activity
@@ -18,7 +24,7 @@
         <activity
             android:name=".CustomerBookingActivity"
             android:exported="true" />
-        <activity android:name=".CustomerShopsListingActivity"></activity>
+        <activity android:name=".CustomerShopsListingActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".GreetingActivity" />

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +56,20 @@ public class ShopkeeperAccountFragment extends Fragment {
         }
     }
 
+    TextView textShopName;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shopkeeper_account, container, false);
+        View view = inflater.inflate(R.layout.fragment_shopkeeper_account, container, false);
+
+        textShopName = view.findViewById(R.id.textShopName);
+
+        Bundle bundle = getArguments();
+        String shop_phone = bundle.getString("shop_phone");
+
+        textShopName.setText("Xin chào, " + shop_phone);
+
+        return view;
     }
 }
